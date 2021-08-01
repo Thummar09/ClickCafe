@@ -25,7 +25,7 @@
                                   BorderColor="Tan" BorderWidth="1px" 
                                 CellPadding="2" ForeColor="Black" GridLines="Both" DataKeyNames="oid" 
                                  Width="938px" onrowdeleting="GridView2_RowDeleting" 
-                                onrowupdating="GridView2_RowUpdating">
+                                onrowupdating="GridView2_RowUpdating" EmptyDataText="No Item in your shopping cart">
                     <AlternatingRowStyle BackColor="WindowFrame" />
                     <Columns>
                         <asp:TemplateField HeaderText="Image">
@@ -54,6 +54,15 @@
                             </ItemTemplate>
                             </asp:TemplateField>
                     </Columns>
+                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />  
+     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />  
+     <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />  
+     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />  
+     <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />  
+     <SortedAscendingCellStyle BackColor="#F1F1F1" />  
+     <SortedAscendingHeaderStyle BackColor="#0000A9" />  
+     <SortedDescendingCellStyle BackColor="#CAC9C9" />  
+     <SortedDescendingHeaderStyle BackColor="#000065" />  
                 </asp:GridView>
 
                             <asp:Button ID="Button1" runat="server" PostBackUrl="~/Home.aspx" 
