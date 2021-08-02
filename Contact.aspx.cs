@@ -44,10 +44,10 @@ namespace ClickCafe
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            TextBox1.Text = "";
+            /*TextBox1.Text = "";
             TextBox2.Text = "";
             TextBox3.Text = "";
-            Label1.Text = "Thanks for the message";
+            Label1.Text = "Thanks for the message";*/
         }
     }
 }

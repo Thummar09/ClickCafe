@@ -50,19 +50,7 @@ namespace ClickCafe
                 Session.Abandon();
                 Response.Redirect("~/Login.aspx");
             }
-            Session["email"].ToString();
-            string strQuery = "SELECT * FROM ORDERMST where Email=email and PName='"+lblname.Text+"' and Status=0";
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count == 1)
-            {
-                Session["oid"].ToString();
-                strQuery ="UPDATE OrderMst SET Qnt = QNT + @QNT, Total_Price = Total_Price + @TPRICE WHERE OID = "+oid;
-
-            }
-           
-            Response.Redirect("MyCart.aspx");
+            
         }
     }
 }

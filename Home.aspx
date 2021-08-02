@@ -155,12 +155,12 @@ img:hover {
    
 
     <div class="video-container" >
-            <video src="foodimg/v7.mp4" autoplay loop class="vid vid1"></video>
+            <video src="foodimg/v26.mp4" autoplay loop class="vid vid1"></video>
          
-             <video src="foodimg/v9.mp4" autoplay loop class="vid vid2"></video>
-             <video src="foodimg/v12.mp4" autoplay loop class="vid vid3"></video>
-             <video src="foodimg/v11.mp4" autoplay loop class="vid vid4"></video>
-             <video src="foodimg/v13.mp4" autoplay loop class="vid vid5"></video>
+             <image src="foodimg/b35.jpg" autoplay loop class="vid vid2"></image>
+             <image src="foodimg/b34.jpg" autoplay loop class="vid vid3"></image>
+             <image src="foodimg/b32.jpg" autoplay loop class="vid vid4"></image>
+             <image src="foodimg/b31.jpg" autoplay loop class="vid vid5"></image>
 
             </div>
     <div class="controls">

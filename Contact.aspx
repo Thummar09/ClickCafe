@@ -3,62 +3,61 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
    
     <style type="text/css">
-        .tbl{
-            margin-right:10px;
+        body{
+            background-color:bisque;
         }
+        
     </style>
+    <center>
+        <br />
+    <h1>Get In Touch</h1> </center>
+    <div class="row">
+        <div class="col-md-3">
+        <div class="container">
+ 
+  
+  <div class="card" style="width:200px">
+    <img class="card-img-top" src="foodimg/avtar1.jpg" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title"><b>Pallavi Thummar</b></h4>
+      <p class="card-text">Phone:9632587410</p>
+     
+    </div></div>
+  </div>
+            </div>
+        <div class="col-md-3">
+             <div class="card" style="width:200px">
+    <img class="card-img-top" src="foodimg/avtar1.jpg" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title"><b>Krishna Narola</b></h4>
+      <p class="card-text">Phone:8520134679</p>
+     
+    </div>
+  </div>
+   </div>
+    <div class="col-md-3">
+             <div class="card" style="width:200px">
+    <img class="card-img-top" src="foodimg/avtar1.jpg" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title"><b>Shruti Patel</b></h4>
+      <p class="card-text">Phone:8745210369</p>
+     
+    </div>
+  </div>
+   </div>
+         <div class="col-md-3">
+             <div class="card" style="width:200px">
+    <img class="card-img-top" src="foodimg/avtar1.jpg" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title"><b>Misha Naik</b></h4>
+      <p class="card-text">Phone:7410258963</p>
+     
+    </div>
+  </div>
+   </div>
+        </div>
+    
+    
 
-    <h3>Contact Details</h3>
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">Phone:</abbr>
-        425.555.0100
-    </address>
-
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
-
-    <table class="tbl">
-        <tr>
-            <td></td>
-            <td><h3 class="auto-style1">Please leave a Message</h3></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td class="auto-style2">Your name : </td>
-            <td>
-                <asp:TextBox ID="TextBox2" runat="server" Width="192px"></asp:TextBox></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td class="auto-style2">Email : </td>
-            <td>
-                <asp:TextBox ID="TextBox1" runat="server" Width="194px"></asp:TextBox></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td class="auto-style2">Message : </td>
-            <td>
-                <asp:TextBox ID="TextBox3" runat="server" Height="98px" TextMode="MultiLine" Width="247px"></asp:TextBox></td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td></td>
-            
-            <td><asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label1" runat="server"></asp:Label>
-            </td>
-            <td></td>
-
-        </tr>
-    </table>
+    
 </asp:Content>

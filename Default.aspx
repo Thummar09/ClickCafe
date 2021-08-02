@@ -156,12 +156,12 @@ img:hover {
     </section>
    
     <div class="video-container" >
-            <video  src="foodimg/v2.mp4" autoplay loop class="vid vid1"></video>
+            <video  src="foodimg/v21.mp4" autoplay loop class="vid vid1"></video>
          
-             <video  src="foodimg/v4.mp4" autoplay loop class="vid vid2"></video>
-             <video src="foodimg/v6.mp4" autoplay loop class="vid vid3"></video>
-             <video src="foodimg/v5.mp4" autoplay loop class="vid vid4"></video>
-             <video src="foodimg/v3.mp4" autoplay loop class="vid vid5"></video>
+             <image  src="foodimg/b32.jpg" autoplay loop class="vid vid2"></image>
+             <image src="foodimg/b35.jpg" autoplay loop class="vid vid3"></image>
+             <image src="foodimg/b31.jpg" autoplay loop class="vid vid4"></image>
+             <image src="foodimg/b34.jpg" autoplay loop class="vid vid5"></image>
 
             </div>
         
@@ -315,32 +315,13 @@ img:hover {
   </main>
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+            
         </div>
         <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
+            
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
+           
         </div>
     </div>  
     

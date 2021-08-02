@@ -1278,7 +1278,8 @@ h6 .small,
 h1,
 .h1 {
     font-size: 36px;
-    color: #008000;
+    color: #3F51B5;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 h2,
 .h2 {
