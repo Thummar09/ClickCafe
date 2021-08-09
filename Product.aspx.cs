@@ -14,10 +14,23 @@ namespace ClickCafe
     {
         SqlCommand cmd;
         SqlConnection cnn;
+        string strQuery;
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if(Session["id"]!=null)
+            { 
+            this.MasterPageFile = "~/Homee.master";
+            }
+            else
+            {
+                this.MasterPageFile = "~/Site.master";
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+ 
             cnn = new SqlConnection();
             cnn.ConnectionString = ConfigurationManager.ConnectionStrings["ClickCafeConnectionString"].ConnectionString;
             cnn.Open();
@@ -127,15 +140,26 @@ namespace ClickCafe
 
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
-           // Session["vid"] = e.CommandArgument.ToString();
-            //Response.Redirect("View.aspx");
-        }
+            if (Session["id"] == null)
+            {
+                Session.RemoveAll();
+                Session.Abandon();
+                Response.Redirect("~/Login.aspx");
+            }
+             Session["addproduct"]= "true";
+             if(e.CommandName=="AddToCart")
+             {
+                 Response.Redirect("MyCart.aspx?id=" + e.CommandArgument.ToString());
+             }
+            
+    }
 
-        protected void Button1_Click(object sender, EventArgs e)
+       /* protected void Button1_Click(object sender, EventArgs e)
         {
+            
             Button btn = (Button)sender;
             int id = Int32.Parse(btn.CommandArgument.ToString());
-            Response.Redirect("View.aspx?id="+id);
-        }
+            Response.Redirect("Mycart.aspx");
+        }*/
     }
 }

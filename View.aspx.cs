@@ -18,6 +18,8 @@ namespace ClickCafe
         DataSet ds;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            
             string strQuery;
             cnn = new SqlConnection();
             cnn.ConnectionString = ConfigurationManager.ConnectionStrings["ClickCafeConnectionString"].ConnectionString;
@@ -44,12 +46,7 @@ namespace ClickCafe
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (Session["id"] == null)
-            {
-                Session.RemoveAll();
-                Session.Abandon();
-                Response.Redirect("~/Login.aspx");
-            }
+            
             
         }
     }

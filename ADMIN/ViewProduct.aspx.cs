@@ -52,7 +52,7 @@ namespace ClickCafe.ADMIN
             foreach (GridViewRow row in GridView1.Rows)
             {
                 int pid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-                string query = "DELETE  FROM ProductMst WHERE PID=@PID";
+                string query = "DELETE  FROM ProductMst WHERE PID="+pid;
                 string myconn = ConfigurationManager.ConnectionStrings["ClickCafeConnectionString"].ToString();
 
                 
@@ -63,15 +63,13 @@ namespace ClickCafe.ADMIN
                 {
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
-                    da.SelectCommand = cmd;
+                   
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        
-
-                        cmd.Parameters.AddWithValue("@PID", pid);
+                     
                         cmd.Connection = con;
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -94,9 +92,10 @@ namespace ClickCafe.ADMIN
         {
             GridViewRow row = GridView1.Rows[e.RowIndex];
             int pid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-            string pname = (row.Cells[1].Controls[0] as TextBox).Text;
-            string price = (row.Cells[2].Controls[0] as TextBox).Text;
-            string detail = (row.Cells[3].Controls[0] as TextBox).Text;
+            
+            string pname = (row.Cells[0].Controls[0] as TextBox).Text;
+            string price = (row.Cells[1].Controls[0] as TextBox).Text;
+            string detail = (row.Cells[2].Controls[0] as TextBox).Text;
             string myconn = ConfigurationManager.ConnectionStrings["ClickCafeConnectionString"].ToString();
             using (SqlConnection con = new SqlConnection(myconn))
             {

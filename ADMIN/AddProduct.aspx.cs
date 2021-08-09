@@ -28,11 +28,11 @@ namespace ClickCafe.ADMIN
         {
             String mainconn = ConfigurationManager.ConnectionStrings["ClickCafeConnectionString"].ToString();
             
-            String strQuery, UIMGPath, imgExt;
+            String strQuery, UIMGPath, imgExt, DBPath;
             imgExt = System.IO.Path.GetExtension(FileUpload1.FileName);
-            UIMGPath = Server.MapPath("~/Images/") + FileUpload1.FileName;
+            UIMGPath = Server.MapPath("~/Images/"+drpcate.SelectedValue.ToString()+"/") + FileUpload1.FileName;
 
-
+            DBPath = "Images/"+drpcate.SelectedValue.ToString()+"/" + FileUpload1.FileName;
 
             //FileUpload1.SaveAs(UIMGPath);
 
@@ -42,7 +42,7 @@ namespace ClickCafe.ADMIN
             cmd.Parameters.AddWithValue("@PName", txtname.Text);
             cmd.Parameters.AddWithValue("@Detail", txtdetail.Text);
             cmd.Parameters.AddWithValue("@Price", txtprice.Text);
-            cmd.Parameters.AddWithValue("@Picture", UIMGPath);
+            cmd.Parameters.AddWithValue("@Picture", DBPath);
             cmd.Parameters.AddWithValue("@Cname", drpcate.SelectedItem.Value);
             
            conn.Open();
@@ -60,6 +60,7 @@ namespace ClickCafe.ADMIN
             {
                 Response.Write("<script>alert('Product Not Inserted')</script>");
             }
+            Response.Redirect("AddProduct.aspx");
             conn.Close();
            System.Diagnostics.Debug.WriteLine("****" + strQuery);
 

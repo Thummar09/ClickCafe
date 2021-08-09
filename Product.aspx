@@ -76,9 +76,9 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <asp:Button ID="Button1" runat="server" CssClass="btn" Height="30px" 
-                                                                Text="View" BackColor="yellowgreen" Width="70px" OnClick="Button1_Click" CommandArgument='<%#Eval("PID") %>' />
-                                                        </td>
+                                                            <asp:ImageButton ID="ImageButton1" runat="server" Height="50px" Width="60px"
+                                                                ImageUrl="~/foodimg/cart.png" CommandArgument='<%#Eval("PID") %>' CommandName="AddToCart"/></td>
+                                                        
                                                     </tr>
                                                 </table>
                                             </td>
@@ -88,11 +88,20 @@
                                                 Price&nbsp; :
                                                 <asp:Label ID="lblprice" runat="server" Text='<%#Eval("Price") %>'></asp:Label>
                                             </td>
+                                            
                                         </tr>
+                                        
+                                        <td class="style16">
+                                                Detail&nbsp; :
+                                                <asp:Label ID="lbldetail" runat="server" Text='<%#Eval("Detail") %>'></asp:Label>
+                                            </td>
+                                        <td>&nbsp;</td>
                                     </table>
+                                   
                                 </td>
                                 <td class="style6" style="color: #FFFF66">
                                     &nbsp;</td>
+                                
                             </tr>
                         </table>
                     </ItemTemplate>

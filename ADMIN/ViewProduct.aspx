@@ -77,6 +77,9 @@
                                     <asp:CommandField ShowEditButton="True" >
                                     <ItemStyle Width="100px" />
                                     </asp:CommandField>
+                                    <asp:CommandField ShowDeleteButton="True" >
+                                    <ItemStyle Width="100px" />
+                                    </asp:CommandField>
                                       
                                 </Columns>
      <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />  

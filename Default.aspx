@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ClickCafe._Default" %>
+﻿ <%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ClickCafe._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
    
@@ -158,10 +158,10 @@ img:hover {
     <div class="video-container" >
             <video  src="foodimg/v21.mp4" autoplay loop class="vid vid1"></video>
          
-             <image  src="foodimg/b32.jpg" autoplay loop class="vid vid2"></image>
+             <image  src="foodimg/b40.jpg" autoplay loop class="vid vid2"></image>
              <image src="foodimg/b35.jpg" autoplay loop class="vid vid3"></image>
-             <image src="foodimg/b31.jpg" autoplay loop class="vid vid4"></image>
-             <image src="foodimg/b34.jpg" autoplay loop class="vid vid5"></image>
+             <image src="foodimg/b41.jpg" autoplay loop class="vid vid4"></image>
+             <image src="foodimg/b42.jpg" autoplay loop class="vid vid5"></image>
 
             </div>
         

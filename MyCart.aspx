@@ -67,7 +67,7 @@
 
                             <asp:Button ID="Button1" runat="server" PostBackUrl="~/Home.aspx" 
                                 Text="Continew Shopping" />
-&nbsp;<asp:Button ID="btnchckout" runat="server" PostBackUrl="~/Payment.aspx"  Text="CheckOut" />
+                        &nbsp;<asp:Button ID="btnchckout" runat="server" PostBackUrl="~/Payment.aspx"  Text="CheckOut" />
             </td>
             <td>
                             &nbsp;</td>
