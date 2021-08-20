@@ -38,9 +38,11 @@
                     </tr>
                     <tr>
                         <td class="style3">
-                            &nbsp;</td>
-                        <td>
-                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                            </td>
+                        <td align="center">
+                            <asp:DropDownList ID="drpcate" runat="server"></asp:DropDownList>
+                          
+                              <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
                                 BackColor="White" BorderColor="#999999" BorderWidth="1px" 
                                 CellPadding="3" Gridlines="Vertical"
                                 DataKeyNames="pid" 
@@ -54,7 +56,11 @@
                                 <Columns> 
                                     
                                 
-                                     
+                                     <asp:TemplateField HeaderText="Image">
+                                <ItemTemplate>
+                                <asp:Image ID="imgg" runat="server" ImageUrl='<%#"/"+ Eval("Picture") %>' Height="40px" Width="40px" />
+                                </ItemTemplate>
+                                </asp:TemplateField>
 
                                     <asp:BoundField DataField="PName" HeaderText="Product Name" 
                                         SortExpression="pname" >
@@ -69,10 +75,13 @@
                                         SortExpression="detail" >
                                     <ItemStyle Width="140px" />
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="Cname" HeaderText="Category" 
-                                        SortExpression="cname" >
-                                    <ItemStyle Width="200px" />
+                                     
+                                 
+                                    <asp:BoundField DataField="Cname" HeaderText="Category" SortExpression="Cname" >
+                                    
+                                    <ItemStyle Width="100px" />
                                     </asp:BoundField>
+                                    
                                     
                                     <asp:CommandField ShowEditButton="True" >
                                     <ItemStyle Width="100px" />

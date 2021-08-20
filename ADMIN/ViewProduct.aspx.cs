@@ -9,35 +9,35 @@ using System.Data.SqlClient;
 using System.Configuration;
 
 
+
 namespace ClickCafe.ADMIN
 {
     public partial class ViewProduct : System.Web.UI.Page
     {
         SqlCommand cmd = new SqlCommand();
         SqlConnection con = new SqlConnection();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            if (this.IsPostBack == false)
+            if (!this.IsPostBack)
             {
-
                 this.BindGrid();
-
             }
-
-
         }
         private void BindGrid()
         {
             string myconn= ConfigurationManager.ConnectionStrings["ClickCafeConnectionString"].ToString();
-            string query = "SELECT * FROM ProductMst";
+            
+            
             using (SqlConnection con = new SqlConnection(myconn))
             {
-                
-                using (SqlDataAdapter da = new SqlDataAdapter(query, con))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM ProductMst", con))
                 {
-                    using (DataTable dt = new DataTable())
+                    cmd.CommandType = CommandType.Text;
+                    using (SqlDataAdapter da = new SqlDataAdapter())
                     {
+                        da.SelectCommand = cmd;
+                        DataTable dt = new DataTable();
                         da.Fill(dt);
                         GridView1.DataSource = dt;
                         GridView1.DataBind();
@@ -46,37 +46,32 @@ namespace ClickCafe.ADMIN
                 }
             }
         }
+        
+
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
            
             foreach (GridViewRow row in GridView1.Rows)
             {
-                int pid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-                string query = "DELETE  FROM ProductMst WHERE PID="+pid;
-                string myconn = ConfigurationManager.ConnectionStrings["ClickCafeConnectionString"].ToString();
-
-                
-                
-                
-                
-                using (SqlConnection con = new SqlConnection(myconn))
+                int pid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value.ToString());
+                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ClickCafeConnectionString"].ConnectionString))
                 {
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataSet ds = new DataSet();
-                   
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
+                    using (SqlCommand cmd = new SqlCommand("DELETE FROM ProductMst WHERE PID=@PID", con))
 
-                    using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                     
-                        cmd.Connection = con;
+                        cmd.Parameters.AddWithValue("@PID", pid);
+                        DataTable dt = new DataTable();
+                        cmd.CommandType = CommandType.Text;
                         con.Open();
                         cmd.ExecuteNonQuery();
-                        con.Close();
                         lblcnt.Text = dt.Rows.Count.ToString();
+                        con.Close();
                     }
                 }
+                
+                    
+                   
+                
             }
 
             this.BindGrid();
@@ -93,9 +88,9 @@ namespace ClickCafe.ADMIN
             GridViewRow row = GridView1.Rows[e.RowIndex];
             int pid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
             
-            string pname = (row.Cells[0].Controls[0] as TextBox).Text;
-            string price = (row.Cells[1].Controls[0] as TextBox).Text;
-            string detail = (row.Cells[2].Controls[0] as TextBox).Text;
+            string pname = (row.Cells[1].Controls[0] as TextBox).Text;
+            string price = (row.Cells[2].Controls[0] as TextBox).Text;
+            string detail = (row.Cells[3].Controls[0] as TextBox).Text;
             string myconn = ConfigurationManager.ConnectionStrings["ClickCafeConnectionString"].ToString();
             using (SqlConnection con = new SqlConnection(myconn))
             {
@@ -132,11 +127,9 @@ namespace ClickCafe.ADMIN
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-          /*  if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != GridView1.EditIndex)
-            {
-                (e.Row.Cells[0].Controls[3] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
-            }*/
+           
         }
+        
     }
         
 

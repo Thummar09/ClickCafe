@@ -11,7 +11,18 @@ namespace ClickCafe
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["FName"] != null)
+            {
+                string strUser = Session["FName"].ToString() + " " + Session["LName"].ToString();
+              
+                // lblUsr.Text = "Welcome" + strUser;
+                //lblUsr.Visible = true;
+            }
+            else
+            { 
+               // lblUsr.Visible = false;
+            }
         }
+
     }
 }
