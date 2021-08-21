@@ -59,16 +59,20 @@
 
        <nav>
             <label class="logo">ClickCafe</label>
+          
                     <ul>
                          <li><a runat="server" href="~/Home">Home</a></li>
                         <li><a runat="server" href="~/MyOrder">My Order</a></li>
                         <li><a runat="server" href="~/MyCart">My Cart</a></li>
                         <li><a runat="server" href="~/Password">Change Password</a></li>
                         <li><a runat="server" href="~/Default">LogOut</a></li>
+                        <asp:Label ID="lblUsr" style="float:right; margin-right:15px;" runat="server" Text=""></asp:Label>
+       
                     </ul>
             <label id="icon">
                 <i class="fas fa-bars"></i>
             </label>
+            
                 </nav>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

@@ -11,6 +11,7 @@ namespace ClickCafe
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //lblUsr.Text = Session["Fname"] + "" + Session["LName"];
             if (Session["id"] == null || Session["role"].ToString() != "2")
             {
                 Session.RemoveAll();

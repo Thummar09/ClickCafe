@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.IO;
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -34,8 +35,7 @@ namespace ClickCafe.ADMIN
 
             DBPath = "Images/"+drpcate.SelectedValue.ToString()+"/" + FileUpload1.FileName;
 
-            //FileUpload1.SaveAs(UIMGPath);
-
+            FileUpload1.SaveAs(UIMGPath);
             SqlConnection conn = new SqlConnection(mainconn);            
             strQuery = "INSERT INTO [dbo].[ProductMst] (PName,Detail,Price,Picture,Cname) VALUES(@PName,@Detail,@Price,@Picture,@Cname)";
             SqlCommand cmd = new SqlCommand(strQuery, conn);
@@ -62,11 +62,7 @@ namespace ClickCafe.ADMIN
             }
             Response.Redirect("AddProduct.aspx");
             conn.Close();
-           System.Diagnostics.Debug.WriteLine("****" + strQuery);
-
-
-          
-               
+           System.Diagnostics.Debug.WriteLine("****" + strQuery);  
                     
         }
 
