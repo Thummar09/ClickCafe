@@ -146,20 +146,22 @@ namespace ClickCafe
                 Session.Abandon();
                 Response.Redirect("~/Login.aspx");
             }
-             Session["addproduct"]= "true";
+
+
+            /* Session["addproduct"]= "true";
              if(e.CommandName=="AddToCart")
              {
                  Response.Redirect("MyCart.aspx?id=" + e.CommandArgument.ToString());
-             }
+             }*/
             
     }
 
-       /* protected void Button1_Click(object sender, EventArgs e)
+       protected void Button1_Click(object sender, EventArgs e)
         {
             
             Button btn = (Button)sender;
             int id = Int32.Parse(btn.CommandArgument.ToString());
             Response.Redirect("Mycart.aspx");
-        }*/
+        }
     }
 }

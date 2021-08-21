@@ -21,48 +21,27 @@
             <td class="style3">
                             &nbsp;</td>
             <td class="style4" colspan="2">
-                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="false"
-                                  BorderColor="Tan" BorderWidth="1px" 
-                                CellPadding="2" ForeColor="Black" GridLines="Both" DataKeyNames="oid" 
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False"
+                                  BackColor="white" BorderColor="#999999" BorderWidth="1px" 
+                                CellPadding="2" ForeColor="Black" DataKeyNames="oid" 
                                  Width="938px" onrowdeleting="GridView2_RowDeleting" 
                                 onrowupdating="GridView2_RowUpdating" EmptyDataText="No Item in your shopping cart">
-                    <AlternatingRowStyle BackColor="WindowFrame" />
+                    <AlternatingRowStyle BackColor="#DCDCDC" />
                     <Columns>
-                        <asp:TemplateField HeaderText="Image">
-                                        <ItemTemplate>
-                                            <asp:Image ID="imff" runat="server" ImageUrl='<%#Eval("Picture") %>' Height="40px" Width="40px" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                        <asp:ImageField DataImageUrlField="Picture" DataImageUrlFormatString="&quot;~\Images\{0}&quot;" HeaderText="Image" ReadOnly="True">
+                        </asp:ImageField>
                         <asp:BoundField HeaderText="ProductName" DataField="PName" />
                         <asp:BoundField HeaderText="Price" DataField="Price" />
-                        <asp:TemplateField HeaderText="Qnt">
+                         <asp:BoundField HeaderText="Qnt" DataField="Qnt" />
+                        <asp:TemplateField HeaderText="Total">
                             <ItemTemplate>
-                            <asp:TextBox runat="server" ID="txtq" Text='<%#Eval("Qnt") %>' Height="20px" Width="40px"></asp:TextBox>
+                                <asp:Label ID="Label1" runat="server" Text='<%# DOuble.Parse(Eval("Price").ToString())*Int32.Parse(Eval("Qnt").ToString()) %>'></asp:Label>
                             </ItemTemplate>
                             </asp:TemplateField>
-                         <asp:BoundField HeaderText="TotalPrice" DataField="total_price" />
-                            <asp:TemplateField HeaderText="Update">
-                            <ItemTemplate>
-                            <asp:LinkButton runat="server" Text="Update" ID="lnkupd" CommandName="update" ForeColor="Blue" CommandArgument='<%#Eval("oid") %>'></asp:LinkButton>
-
-                            </ItemTemplate>
-                            </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Remove">
-                            <ItemTemplate>
-                            <asp:LinkButton runat="server" Text="Remove" ID="lnkrem" CommandName="Delete" ForeColor="Red" CommandArgument='<%#Eval("oid") %>'></asp:LinkButton>
-
-                            </ItemTemplate>
-                            </asp:TemplateField>
+                         <asp:CommandField ShowEditButton="True" />
+                        <asp:CommandField ShowDeleteButton="True" />
                     </Columns>
-                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />  
-     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />  
-     <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />  
-     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />  
-     <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />  
-     <SortedAscendingCellStyle BackColor="#F1F1F1" />  
-     <SortedAscendingHeaderStyle BackColor="#0000A9" />  
-     <SortedDescendingCellStyle BackColor="#CAC9C9" />  
-     <SortedDescendingHeaderStyle BackColor="#000065" />  
+                     
                 </asp:GridView>
 
                             <asp:Button ID="Button1" runat="server" PostBackUrl="~/Home.aspx" 
