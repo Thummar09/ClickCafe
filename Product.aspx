@@ -76,9 +76,8 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <asp:ImageButton ID="ImageButton1" runat="server" Height="50px" Width="60px"
-                                                                ImageUrl="~/foodimg/cart.png" CommandArgument='<%#Eval("PID") %>' CommandName="AddToCart"/></td>
-                                                        
+                                                            <asp:Button ID="Button1" runat="server" Text="Add"
+                                                                height="30px" Width="70px" CommandArgument='<%#Eval("PID") %>'/>
                                                     </tr>
                                                 </table>
                                             </td>

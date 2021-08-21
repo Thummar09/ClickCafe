@@ -12,6 +12,7 @@ namespace ClickCafe
 {
     public partial class Product : System.Web.UI.Page
     {
+        cart mycart;
         SqlCommand cmd;
         SqlConnection cnn;
         string strQuery;
@@ -146,20 +147,28 @@ namespace ClickCafe
                 Session.Abandon();
                 Response.Redirect("~/Login.aspx");
             }
-             Session["addproduct"]= "true";
-             if(e.CommandName=="AddToCart")
-             {
-                 Response.Redirect("MyCart.aspx?id=" + e.CommandArgument.ToString());
-             }
+            
             
     }
 
-       /* protected void Button1_Click(object sender, EventArgs e)
+       protected void Button1_Click(object sender, EventArgs e)
         {
             
-            Button btn = (Button)sender;
-            int id = Int32.Parse(btn.CommandArgument.ToString());
-            Response.Redirect("Mycart.aspx");
-        }*/
+        if (mycart == null)
+            {
+                mycart = new cart();
+                Session["mycart"] = mycart;
+            }
+            string id = Request.QueryString["PID"];
+            mycart = (cart)Session["mycart"];
+            DataTable dt = dataaccess.selectQuery("slect * from ProductMst WHERE PID =" + id);
+            DataRow row = dt.Rows[0];
+            mycart.Insert(new cartItem(Int32.Parse(id),
+                row["PName"].ToString(),
+                Double.Parse(row["Price"].ToString()),
+                row["Picture"].ToString(),
+                row["Detail"].ToString())
+                );
+        }
     }
 }
