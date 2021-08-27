@@ -192,7 +192,7 @@ img:hover {
                   <div class="card">
                       
                     <a data-fancybox-group="gallery" href="Product.aspx?id=8" class="gallery_item thumb lazy-img" style="padding-bottom: 72.23168654173765%;">
-                        <img src="Images/Breakfast/pexels-jill-wellington-257816.jpg" alt="" style="height: 235px; width: 280px; ">
+                        <img src="Images/Breakfast/pexels-mareefe-1417945.jpg" alt="" style="height: 235px; width: 280px; ">
                        
                              <div class="middle">
                                   <div class="text">BREAKFAST</div>
@@ -248,7 +248,7 @@ img:hover {
                 </div> <br /> <br />
                         <div class="card">
                     &nbsp;<a data-fancybox-group="gallery" href="Product.aspx?id=5" class="gallery_item thumb lazy-img" style="padding-bottom: 55.97315436241611%;">
-                        <img src="Images/Lebanese/pexels-anthony-leong-2092897.jpg" alt="" style="margin-top:-25px ; width: 280px; height: 235px; ">
+                        <img src="Images/Lebanese/sfeeha.jpg" alt="" style="margin-top:-25px ; width: 280px; height: 235px; ">
                        
                             <div class="middle">
                                 <div class="text">LEBANESE</div>

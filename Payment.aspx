@@ -34,10 +34,10 @@
                         <td align="left">
                             <asp:RadioButton ID="rdoonine" runat="server" AutoPostBack="True" 
                                 ForeColor="#34aa34" GroupName="a"
-                                Text="Online" />
+                                Text="Online" oncheckedchanged="rdoonine_CheckedChanged" />
                             <asp:RadioButton ID="rdooffline" runat="server" AutoPostBack="True" 
                                 ForeColor="#34aa34" GroupName="a"  
-                                Text="Offline" />
+                                Text="Offline" oncheckedchanged="rdooffline_CheckedChanged" />
                         </td>
                     </tr>
                     <tr>
@@ -98,7 +98,8 @@
                                                         <td>
                                                             &nbsp;</td>
                                                         <td align="left">
-                                                            <asp:Button ID="btnpayonline" runat="server"  Text="Pay Now" />
+                                                            <asp:Button ID="btnpayonline" runat="server"  Text="Pay Now"
+                                                                onclick="btnpayonline_Click"/>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -117,7 +118,8 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <asp:Button ID="btnpayoffline" runat="server" Text="PayNow" />
+                                                            <asp:Button ID="btnpayoffline" runat="server" Text="PayNow"
+                                                                onclick="btnpayoffline_Click"/>
                                                         </td>
                                                     </tr>
                                                     <tr>

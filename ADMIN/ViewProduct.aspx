@@ -40,8 +40,7 @@
                         <td class="style3">
                             </td>
                         <td align="center">
-                            <asp:DropDownList ID="drpcate" runat="server"></asp:DropDownList>
-                          
+                            
                               <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
                                 BackColor="White" BorderColor="#999999" BorderWidth="1px" 
                                 CellPadding="3" Gridlines="Vertical"

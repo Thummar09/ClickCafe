@@ -14,11 +14,10 @@ namespace ClickCafe
 
         static dataaccess()
         {
-            mycon = WebConfigurationManager.ConnectionStrings["ClickCafeConnectioString"].ConnectionString;
+            mycon = WebConfigurationManager.ConnectionStrings["ClickCafeConnectionString"].ConnectionString;
         }
 
         public static DataTable selectQuery(string query)
-
         {
             DataTable dt = new DataTable();
             SqlConnection cnn = new SqlConnection(mycon);

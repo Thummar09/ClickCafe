@@ -76,7 +76,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <asp:Button ID="Button1" runat="server" Text="Add"
+                                                            <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click"
                                                                 Height="30px" Width="70px" CommandArgument='<%#Eval("PID") %>' /> 
                                                     </tr>
                                                 </table>

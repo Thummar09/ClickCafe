@@ -1,17 +1,19 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace ClickCafe
 {
-    public class cart
+    public class cart1
     {
-        private List<cartItem> Items { get; set; }
+        public List<cartItem> Items { get; set; }
 
-        public cart()
+        public cart1()
         {
-            Items = nem List<cartItem>();
+            Items = new List<cartItem>();
         }
         private int ItemIndexOf(int PID)
         {
@@ -24,27 +26,27 @@ namespace ClickCafe
             }
             return -1;
         }
-        public void Insert(cartitem item)
+        public void Insert(cartItem item)
         {
             int index = ItemIndexOf(item.PID);
-            if(index==-1)
+            if (index == -1)
             {
                 Items.Add(item);
             }
             else
             {
-                Items[index].Quantity++;
+                Items[index].Qnt++;
             }
         }
         public void Delete(int rowID)
         {
             Items.RemoveAt(rowID);
         }
-        public void Update(int rowID,int Quantity)
+        public void Update(int rowID, int Qnt)
         {
-            if(Quantity>0)
+            if (Qnt > 0)
             {
-                Items[rowID].Quantity = Quantity;
+                Items[rowID].Qnt = Qnt;
             }
             else
             {
@@ -55,7 +57,7 @@ namespace ClickCafe
         {
             get
             {
-                if(Items == null)
+                if (Items == null)
                 {
                     return 0;
                 }
@@ -64,7 +66,7 @@ namespace ClickCafe
                     double Grandtotal = 0;
                     foreach (cartItem item in Items)
                     {
-                        Grandtotal += item.Quantity * item.price;
+                        Grandtotal += item.Qnt * item.Price;
                     }
                     return Grandtotal;
                 }

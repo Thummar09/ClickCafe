@@ -17,7 +17,7 @@
  
   
   <div class="card" style="width:200px">
-    <img class="card-img-top" src="foodimg/avtar1.jpg" alt="Card image" style="width:100%">
+    <img class="card-img-top" src="foodimg/pallavi.jpg" alt="Card image" style="width:100%; height:206px;">
     <div class="card-body">
       <h4 class="card-title"><b>Pallavi Thummar</b></h4>
       <p class="card-text">Phone:9632587410</p>
@@ -27,7 +27,7 @@
             </div>
         <div class="col-md-3">
              <div class="card" style="width:200px">
-    <img class="card-img-top" src="foodimg/avtar1.jpg" alt="Card image" style="width:100%">
+    <img class="card-img-top" src="foodimg/krishna.jpg" alt="Card image" style="width:100%">
     <div class="card-body">
       <h4 class="card-title"><b>Krishna Narola</b></h4>
       <p class="card-text">Phone:8520134679</p>
@@ -37,7 +37,7 @@
    </div>
     <div class="col-md-3">
              <div class="card" style="width:200px">
-    <img class="card-img-top" src="foodimg/avtar1.jpg" alt="Card image" style="width:100%">
+    <img class="card-img-top" src="foodimg/shruti.jpg" alt="Card image" style="width:100%; height:206px;">
     <div class="card-body">
       <h4 class="card-title"><b>Shruti Patel</b></h4>
       <p class="card-text">Phone:8745210369</p>
@@ -47,7 +47,7 @@
    </div>
          <div class="col-md-3">
              <div class="card" style="width:200px">
-    <img class="card-img-top" src="foodimg/avtar1.jpg" alt="Card image" style="width:100%">
+    <img class="card-img-top" src="foodimg/misha.jpg" alt="Card image" style="width:100%; height:206px;">
     <div class="card-body">
       <h4 class="card-title"><b>Misha Naik</b></h4>
       <p class="card-text">Phone:7410258963</p>

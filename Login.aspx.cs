@@ -20,24 +20,7 @@ namespace ClickCafe
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
-            /** cnn.Open();
-             string StrQuery = "SELECT * FROM UserMst WHERE Email='"+txtusername.Text+"' and Password='"+txtpassword.Text+"'";
-             System.Diagnostics.Debug.WriteLine(StrQuery);
-             SqlCommand cmd = new SqlCommand(StrQuery,cnn);
-             SqlDataAdapter da = new SqlDataAdapter(cmd);
-             DataTable dt = new DataTable();
-             da.Fill(dt);
-             if (dt.Rows.Count > 0)
-             {
-                 Session["uid"] = dt.Rows[0]["uid"].ToString();
-                 Response.Redirect("Home.aspx");
-             }
-             else
-             {
-                 lblmsg.Text = "Invalid email or password";
-
-             }*/
-
+            
             string email = txtemail.Text;
             string password = txtpassword.Text;
 

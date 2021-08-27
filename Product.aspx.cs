@@ -12,9 +12,11 @@ namespace ClickCafe
 {
     public partial class Product : System.Web.UI.Page
     {
+        cart1 mycart;
         SqlCommand cmd;
         SqlConnection cnn;
         string strQuery;
+        DataTable dt = new DataTable();
 
         protected void Page_PreInit(object sender, EventArgs e)
         {
@@ -146,22 +148,64 @@ namespace ClickCafe
                 Session.Abandon();
                 Response.Redirect("~/Login.aspx");
             }
-
-
-            /* Session["addproduct"]= "true";
-             if(e.CommandName=="AddToCart")
-             {
-                 Response.Redirect("MyCart.aspx?id=" + e.CommandArgument.ToString());
-             }*/
+            
             
     }
 
        protected void Button1_Click(object sender, EventArgs e)
         {
             
-            Button btn = (Button)sender;
-            int id = Int32.Parse(btn.CommandArgument.ToString());
-            Response.Redirect("Mycart.aspx");
+
+            if (Session["mycart"]==null)
+            {
+                mycart = new cart1();
+                Session["mycart"] = mycart;
+
+            }
+              Button btn = sender as Button;
+               string pid = btn.CommandArgument;
+               string uid;
+               uid = Session["id"].ToString(); // get uid from email stored in session
+               strQuery="select UID from UserMst Where Email='" + uid +"'"; ;
+               SqlCommand cmd = new SqlCommand(strQuery, cnn);
+               uid = cmd.ExecuteScalar().ToString();
+
+               //Response.Write("<script>alert('"+strQuery+"');</script>");
+               Response.Write(strQuery);
+
+
+               strQuery = "select count(*) from CartMst WHere UID="+uid+" and PID= "+pid+"";
+               cmd = new SqlCommand(strQuery, cnn);
+               int rows = Int32.Parse(cmd.ExecuteScalar().ToString());
+               //check whether pid already exist for given uid
+
+               if(rows==0)
+                {
+                   strQuery = "Insert Into CartMst (Qnt,PID,UID) Values(1,"+pid+","+uid+") ";
+                   cmd = new SqlCommand(strQuery,cnn);
+                   cmd.ExecuteNonQuery();
+               }
+                else
+                {
+                   strQuery = "Update CartMst SET Qnt= Qnt+1 Where PID=" + pid + " and UID = " + uid; ;
+                   cmd = new SqlCommand(strQuery, cnn);
+                   cmd.ExecuteNonQuery();
+                }
+
+
+            /*string PID = Request.QueryString["pid"];
+            mycart = (cart1)Session["mycart"];
+            DataTable dt = dataaccess.selectQuery("select * from ProductMst where PID="+PID);
+            DataRow row = dt.Rows[0];
+            mycart.Insert(new cartItem(Int32.Parse(PID),
+                  row["PName"].ToString(),
+                  Int32.Parse(row["Price"].ToString()),
+                  row["Picture"].ToString(),
+                  row["Cname"].ToString(),
+                  row["Detail"].ToString(), 1));
+
+              */
         }
+       
     }
 }
